@@ -1,3 +1,4 @@
+import { CounterFacade } from './state/counter.facade';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CounterComponent } from './counter.component';
@@ -11,6 +12,9 @@ import * as fromCounter from './state';
       { metaReducers: fromCounter.metaReducers })
   ],
   declarations: [CounterComponent],
-  exports: [CounterComponent]
+  exports: [CounterComponent],
+  providers: [
+    CounterFacade
+  ]
 })
 export class CounterModule { }
